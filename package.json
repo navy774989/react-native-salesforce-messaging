@@ -1,6 +1,6 @@
 {
   "name": "react-native-salesforce-messaging",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Salesforce Messaging for In-App ",
   "source": "./src/index.tsx",
   "main": "./lib/module/index.js",

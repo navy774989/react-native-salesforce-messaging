@@ -65,11 +65,18 @@ android {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
+
+  buildFeatures {
+    dataBinding true
+  }
 }
 
 repositories {
   mavenCentral()
   google()
+  maven {
+    url "https://s3.amazonaws.com/inapp.salesforce.com/public/android"
+  }
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
@@ -77,5 +84,6 @@ def kotlin_version = getExtOrDefault("kotlinVersion")
 dependencies {
   implementation "com.facebook.react:react-android"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation "com.salesforce.service:messaging-inapp-ui:1.8.0"
 }
 

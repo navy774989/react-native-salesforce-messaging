@@ -16,7 +16,23 @@ const SalesforceMessaging = NativeModules.SalesforceMessaging
         },
       }
     );
-
-export function multiply(a: number, b: number): Promise<number> {
-  return SalesforceMessaging.multiply(a, b);
+interface PreChatData {
+  [key: string]: string;
+}
+export function setPreChatData(data: PreChatData): Promise<number> {
+  return SalesforceMessaging.setPreChatData(data);
+}
+export function openChatPage(): Promise<string> {
+  return SalesforceMessaging.openChatPage();
+}
+export function configureMessagingService(
+  serviceAPIUrl: string,
+  organizationId: string,
+  developerName: string
+): Promise<string> {
+  return SalesforceMessaging.configureMessagingService(
+    serviceAPIUrl,
+    organizationId,
+    developerName
+  );
 }

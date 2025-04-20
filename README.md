@@ -2,6 +2,8 @@
 
 A React Native module for integrating Salesforce Messaging (In-App) into your React Native applications.
 
+> **Note**: This is the legacy architecture version of react-native-salesforce-messaging. If you're using React Native's new architecture (Fabric), please use [react-native-salesforce-messaging-nitro](https://github.com/navy774989/react-native-salesforce-messaging-nitro) instead.
+
 ## Features
 
 - Configure Salesforce Messaging service
@@ -145,6 +147,14 @@ export default App;
 - React Native >= 0.60.0
 - iOS >= 12.0
 - Android API Level >= 24
+
+## Differences from New Architecture Version
+
+This package is specifically built for React Native's legacy architecture, while [react-native-salesforce-messaging-nitro](https://github.com/navy774989/react-native-salesforce-messaging-nitro) supports the new architecture (Fabric). Key differences include:
+
+- Uses the legacy NativeModule system
+- Compatible with React Native 0.60.0 and above
+- Supports older React Native projects
 
 ## License
 

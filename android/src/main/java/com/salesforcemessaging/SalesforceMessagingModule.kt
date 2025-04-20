@@ -49,15 +49,19 @@ class SalesforceMessagingModule(reactContext: ReactApplicationContext) :
     val url = URL(serviceAPIUrl)
     val coreConfig = CoreConfiguration(url, organizationId, developerName)
     val conversationID = UUID.randomUUID()
-    val config = UIConfiguration(coreConfig, conversationID)
+    config = UIConfiguration(coreConfig, conversationID)
     promise.resolve("done")
   }
 
   @ReactMethod
   fun openChatPage() {
     config?.let { config ->
-      val uiClient = UIClient.Factory.create(config)
-      uiClient.openConversationActivity(context)
+      val activity = reactApplicationContext.currentActivity
+      activity?.let {
+        val uiClient = UIClient.Factory.create(config)
+        uiClient.openConversationActivity(activity)
+      }
+
     }
   }
 
